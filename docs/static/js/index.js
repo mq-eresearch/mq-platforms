@@ -28,7 +28,7 @@ const dmpLink = document.getElementById("dmpLink");
 const awsLink = document.getElementById("awsLink");
 const roninLink = document.getElementById("roninLink");
 
-function removeCard(card, link, modal) {
+function removeCard(card, link) {
   card.classList.add("greyed-out-card");
   link.removeAttribute("href");
   link.removeAttribute("data-bs-toggle");
@@ -53,19 +53,19 @@ function updatePlatformCards() {
   console.log(selections);
 
   // To begin, turn off all cards
-  removeCard(cloudstorCard, cloudstorLink, "#cloudstorModal");
-  removeCard(sharepointCard, sharepointLink, "#sharepointModal");
-  removeCard(labarchivesCard, labarchivesLink, "#labarchivesModal");
-  removeCard(limesurveyCard, limesurveyLink, "#limesurveyModal");
-  removeCard(qualtricsCard, qualtricsLink, "#qualtricsModal");
-  removeCard(awsCard, awsLink, "#awsModal");
-  removeCard(adaCard, adaLink, "#adaModal");
-  removeCard(rdrCard, rdrLink, "#rdrModal");
-  removeCard(redcapCard, redcapLink, "#redcapModal");
-  removeCard(dryadCard, dryadLink, "#dryadModal");
-  removeCard(zenodoCard, zenodoLink, "#zenodoModal");
-  removeCard(dmpCard, dmpLink, "#dmpModal");
-  removeCard(roninCard, roninLink, "#roninModal");
+  removeCard(cloudstorCard, cloudstorLink);
+  removeCard(sharepointCard, sharepointLink);
+  removeCard(labarchivesCard, labarchivesLink);
+  removeCard(limesurveyCard, limesurveyLink);
+  removeCard(qualtricsCard, qualtricsLink);
+  removeCard(awsCard, awsLink);
+  removeCard(adaCard, adaLink);
+  removeCard(rdrCard, rdrLink);
+  removeCard(redcapCard, redcapLink);
+  removeCard(dryadCard, dryadLink);
+  removeCard(zenodoCard, zenodoLink);
+  removeCard(dmpCard, dmpLink);
+  removeCard(roninCard, roninLink);
 
   // Switch cards on based on sensitivity
   if (selections.includes("general")) {
