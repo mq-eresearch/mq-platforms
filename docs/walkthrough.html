@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="static/css/custom.css" />
+
+    <title>MQ Platform Chooser</title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-light bg-light">
+      <div class="container">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">MQ Platform Chooser</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <!-- <div class="card sticky-top pt-5" style="height: 20rem">
+        <div class="card-body"> -->
+          <div class="row">
+            <div class="col col-sm-6">
+              <!-- One "tab" for each step in the form: -->
+              <div class="tab" id="purposeForm">
+                <h4 class="mb-3">What would you like to do?</h4>
+                <hr />
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="purposeRadio"
+                    id="purposeRadio1"
+                    onclick="showBtns()"
+                    value="purpose-capture-data"
+                  />
+                  <label class="form-check-label" for="purposeRadio1">
+                    Capture Data
+                  </label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="purposeRadio"
+                    id="purposeRadio2"
+                    onclick="showBtns()"
+                    value="purpose-store-data"
+                  />
+                  <label class="form-check-label" for="purposeRadio2">
+                    Store my Data
+                  </label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="purposeRadio"
+                    id="purposeRadio3"
+                    onclick="showBtns()"
+                    value="purpose-analyse-data"
+                  />
+                  <label class="form-check-label" for="purposeRadio3">
+                    Analyse my Data
+                  </label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="purposeRadio"
+                    id="purposeRadio4"
+                    onclick="showBtns()"
+                    value="purpose-archive-data"
+                  />
+                  <label class="form-check-label" for="purposeRadio4">
+                    Archive my Data
+                  </label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="purposeRadio"
+                    id="purposeRadio5"
+                    onclick="showBtns()"
+                    value="purpose-publish-data"
+                  />
+                  <label class="form-check-label" for="purposeRadio5">
+                    Publish my Data
+                  </label>
+                </div>
+              </div>
+
+              <div class="tab" id="sensitivityForm">
+                <h4 class="mb-3">What is the sensitivity of your data?</h4>
+                <hr />
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sensRadio"
+                    id="sensRadio1"
+                    onclick="showBtns()"
+                    value="sens-general"
+                  />
+                  <label class="form-check-label" for="sensRadio1">
+                    General
+                  </label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sensRadio"
+                    id="sensRadio2"
+                    onclick="showBtns()"
+                    value="sens-sensitive"
+                  />
+                  <label class="form-check-label" for="sensRadio2">
+                    Sensitive
+                  </label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sensRadio"
+                    id="sensRadio3"
+                    onclick="showBtns()"
+                    value="sens-highly-sensitive"
+                  />
+                  <label class="form-check-label" for="sensRadio3">
+                    Highly Sensitive
+                  </label>
+                </div>
+              </div>
+
+              <div class="tab" id="datavolumeForm">
+                <h4 class="mb-3">What is the volume of your data?</h4>
+                <hr />
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="dvRadio"
+                    id="dvRadio1"
+                    onclick="showBtns()"
+                    value="dv-lt1tb"
+                  />
+                  <label class="form-check-label" for="dvRadio1">
+                    Less than 1TB
+                  </label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="dvRadio"
+                    id="dvRadio2"
+                    onclick="showBtns()"
+                    value="dv-1tbTo10tb"
+                  />
+                  <label class="form-check-label" for="dvRadio2">
+                    1TB - 10TB
+                  </label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="dvRadio"
+                    id="dvRadio3"
+                    onclick="showBtns()"
+                    value="dv-gt10tb"
+                  />
+                  <label class="form-check-label" for="dvRadio3">
+                    Greater than 10TB
+                  </label>
+                </div>
+              </div>
+
+              <div class="tab" id="costForm">
+                <h4 class="mb-3">What is your budget?</h4>
+                <hr />
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="costRadio"
+                    id="costRadio1"
+                    onclick="showBtns()"
+                    value="cost-none"
+                  />
+                  <label class="form-check-label" for="costRadio1">
+                    None - I'm only interested in free software
+                  </label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="costRadio"
+                    id="costRadio2"
+                    onclick="showBtns()"
+                    value="cost-unlimited"
+                  />
+                  <label class="form-check-label" for="costRadio2">
+                    Unlimited
+                  </label>
+                </div>
+              </div>
+            </div>
+
+
+            </div>
+
+            <div class="row pt-3">
+              <div class="col col-sm-6 col-sm-offset-3">
+                <button
+                  type="button"
+                  id="resetBtn"
+                  class="btn btn-outline-primary"
+                  onclick="resetForm()"
+                >
+                  Reset Form
+                </button>
+                <button
+                  type="button"
+                  id="nextBtn"
+                  class="btn btn-primary"
+                  onclick="loadNextForm()"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          <!-- </div>
+        </div> -->
+      </div>
+
+      <!-- Platform Cards -->
+
+      <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-md-5 mt-5">
+          <div class="col mb-4">
+            <div class="card">
+              <img
+                src="static/img/card_image_1.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Sharepoint</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+              <img
+                src="static/img/cloudstor-image.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Cloudstor</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+              <img
+                src="static/img/card_image_1.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">OneDrive</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+              <img
+                src="static/img/card_image_1.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">REDCap</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+              <img
+                src="static/img/card_image_1.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Qualtrics</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card special-card">
+              <img
+                src="static/img/card_image_1.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">LimeSurvey</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer text-muted">More Info....</div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+              <img
+                src="static/img/card_image_1.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">LabArchives</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+              <img
+                src="static/img/card_image_1.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">XNAT</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+      src=""
+    ></script>
+    <script src="static/js/index.js" type="text/javascript"></script>
+  </body>
+</html>

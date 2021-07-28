@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/custom.css" />
+    <title>MQ Research Platforms</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-light navbar-expand-lg bg-light py-3 fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img
+            src="/static/img/mq-logo-small.png"
+            height="30"
+            class="d-inline-block align-top"
+            alt=""
+          />
+          <a class="navbar-brand" href="/">MQ Platforms</a>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- INTRO TEXT -->
+    <section class="pt-5 pb-3 text-center text-sm-start">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1>
+              <span class="text-dark">MQ Research Platforms Browser</span>
+            </h1>
+
+            <p class="lead mt-3">
+              Listed below are research tools and platforms endorsed for use at
+              Macquarie University. Click on any of the boxes to read more about
+              each tool. Or if you would like to walk through wha you need
+              please visit <a href="walkthrough.html">here</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN BODY -->
+    <section class="pb-3">
+      <div class="container">
+        <div class="row">
+          <!-- FILTER COLUMN -->
+          <div class="col-lg-3 p-4 pb-lg-0 mb-3 mb-lg-0 border">
+            <legend class="col-form-label pt-2">Data Lifecycle Stage</legend>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="switchDataManagement"
+                value="data-management"
+                checked
+                onchange="updatePlatformCards()"
+              />
+              <label class="form-check-label" for="switchDataManagement"
+                >Include Data Management Tools</label
+              >
+            </div>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="switchDataCapture"
+                value="data-capture"
+                checked
+                onchange="updatePlatformCards()"
+              />
+              <label class="form-check-label" for="switchDataCapture"
+                >Include Data Capture Tools</label
+              >
+            </div>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="switchDataStorage"
+                value="data-storage"
+                checked
+                onchange="updatePlatformCards()"
+              />
+              <label class="form-check-label" for="switchDataStorage"
+                >Include Data Storage Tools</label
+              >
+            </div>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="switchDataCompute"
+                value="data-compute"
+                checked
+                onchange="updatePlatformCards()"
+              />
+              <label class="form-check-label" for="switchDataCompute"
+                >Include Data Compute Tools</label
+              >
+            </div>
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="switchDataArchival"
+                value="data-archival"
+                checked
+                onchange="updatePlatformCards()"
+              />
+              <label class="form-check-label" for="switchDataArchival"
+                >Include Data Archival Tools</label
+              >
+            </div>
+
+            <legend class="col-form-label pt-5">Data Sensitivity</legend>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="sensitivityForm"
+                id="radio-general"
+                value="general"
+                onchange="updatePlatformCards()"
+                checked
+              />
+              <label class="form-check-label" for="radio-general">
+                General
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="sensitivityForm"
+                id="radio-sensitive"
+                value="sensitive"
+                onchange="updatePlatformCards()"
+              />
+              <label class="form-check-label" for="radio-sensitive">
+                Sensitive
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="sensitivityForm"
+                id="radio-highly-sensitive"
+                value="highly-sensitive"
+                onchange="updatePlatformCards()"
+              />
+              <label class="form-check-label" for="radio-highly-sensitive">
+                Highly Sensitive
+              </label>
+            </div>
+          </div>
+
+          <!-- PLATFORM CARDS -->
+          <div class="col-lg-9">
+            <div class="row g-4">
+              <!-- CLOUDSTOR -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="cloudstorCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/cloudstor-image.png"
+                      class="rounded-circle"
+                      alt=""
+                      style="height: 60px"
+                    />
+
+                    <p>
+                      <a
+                        href="#"
+                        id="cloudstorLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#cloudstorModal"
+                      >
+                        CloudStor
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Debitis saepe, exercitationem soluta id nobis dolor
+                      officiis velit doloribus dicta deleniti,
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-warning"
+                        >Sensitive</span
+                      >
+                      <span class="badge rounded-pill bg-success"
+                        >Data Storage</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SHAREPOINT -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="sharepointCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/sharepoint-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 60px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="sharepointLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#sharepointModal"
+                      >
+                        Sharepoint
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptas possimus vitae velit, obcaecati totam quam.
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-warning"
+                        >Sensitive</span
+                      >
+                      <span class="badge rounded-pill bg-success"
+                        >Data Storage</span
+                      >
+                      <span class="badge rounded-pill bg-danger"
+                        >Highly Sensitive</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RDR -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="rdrCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/rdr-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 60px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="rdrLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#rdrModal"
+                      >
+                        Research Data Repository
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Debitis saepe, exercitationem soluta id nobis dolor
+                      officiis velit doloribus dicta deleniti,
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-info"
+                        >Data Repository</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- REDCAP -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="redcapCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/redcap-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 60px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="redcapLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#redcapModal"
+                      >
+                        RedCap
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Lorem ipsum dolor sit amet, c
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-primary">Surveys</span>
+                      <span class="badge rounded-pill bg-dark"
+                        >Data capture</span
+                      >
+                      <span class="badge rounded-pill bg-warning"
+                        >Sensitive</span
+                      >
+                      <span class="badge rounded-pill bg-danger"
+                        >Highly Sensitive</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LIMESURVEY -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="limesurveyCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/limesurvey-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 60px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="limesurveyLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#limesurveyModal"
+                      >
+                        LimeSurvey
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Lorem ipsum dolor sit amet, c
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-primary">Surveys</span>
+                      <span class="badge rounded-pill bg-dark"
+                        >Data capture</span
+                      >
+                      <span class="badge rounded-pill bg-warning"
+                        >Sensitive</span
+                      >
+                      <span class="badge rounded-pill bg-danger"
+                        >Highly Sensitive</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LABARCHIVES -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="labarchivesCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/labarchives-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 50px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="labarchivesLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#labarchivesModal"
+                      >
+                        LabArchives
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Lorem ipsum dolor sit amet, c
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-dark"
+                        >Data capture</span
+                      >
+                      <span class="badge rounded-pill bg-warning"
+                        >Sensitive</span
+                      >
+                      <span class="badge rounded-pill bg-danger"
+                        >Highly Sensitive</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- QUALTRICS -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="qualtricsCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/qualtrics-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 60px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="qualtricsLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#qualtricsModal"
+                      >
+                        Qualtrics
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Debitis saepe, exercitationem soluta id nobis dolor
+                      officiis velit doloribus dicta deleniti,
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-primary">Surveys</span>
+                      <span class="badge rounded-pill bg-dark"
+                        >Data capture</span
+                      >
+                      <span class="badge rounded-pill bg-warning"
+                        >Sensitive</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ADA -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="adaCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/ada-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 40px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="adaLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#adaModal"
+                      >
+                        Australian Data Archive
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Debitis saepe, exercitationem soluta id nobis dolor
+                      officiis velit doloribus dicta deleniti,
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-info"
+                        >Data Repository</span
+                      >
+                      <span class="badge rounded-pill bg-warning"
+                        >Sensitive</span
+                      >
+                      <span class="badge rounded-pill bg-danger"
+                        >Highly Sensitive</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DRYAD -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="dryadCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/dryad-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 50px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="dryadLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#dryadModal"
+                      >
+                        Dryad
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Debitis saepe, exercitationem soluta id nobis dolor
+                      officiis velit doloribus dicta deleniti,
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-info"
+                        >Data Repository</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ZENODO -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="zenodoCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/zenodo-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 50px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="zenodoLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#zenodoModal"
+                      >
+                        Zenodo
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Debitis saepe, exercitationem soluta id nobis dolor
+                      officiis velit doloribus dicta deleniti,
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-info"
+                        >Data Repository</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FORA/INFONETICA -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="dmpCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/dmp-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 50px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="dmpLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#dmpModal"
+                      >
+                        Infonetica DMP
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Debitis saepe, exercitationem soluta id nobis dolor
+                      officiis velit doloribus dicta deleniti,
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-success">DMP</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- COMMMERCIAL CLOUD STORAGE -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="awsCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/aws-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 60px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="awsLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#awsModal"
+                      >
+                        Commercial Cloud Storage
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Debitis saepe, exercitationem soluta id nobis dolor
+                      officiis velit doloribus dicta deleniti,
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-warning"
+                        >Sensitive</span
+                      >
+                      <span class="badge rounded-pill bg-success"
+                        >Data Storage</span
+                      >
+                      <span class="badge rounded-pill bg-danger"
+                        >Highly Sensitive</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RONIN -->
+              <div class="col-md-6 col-lg-4 d-flex">
+                <div class="card bg-white" id="roninCard">
+                  <div class="card-body text-center">
+                    <img
+                      src="static/img/ronin-image.png"
+                      class="rounded-circle mb-3"
+                      style="height: 50px"
+                      alt=""
+                    />
+                    <p>
+                      <a
+                        href="#"
+                        id="roninLink"
+                        class="card-title mb3 platformHeading"
+                        data-bs-toggle="modal"
+                        data-bs-target="#roninModal"
+                      >
+                        Ronin
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Debitis saepe, exercitationem soluta id nobis dolor
+                      officiis velit doloribus dicta deleniti,
+                    </p>
+                    <p>
+                      <span class="badge rounded-pill bg-danger"
+                        >Data Compute</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORM MODALS -->
+
+    <!-- Cloudstor -->
+    <div
+      class="modal fade"
+      id="cloudstorModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Cloudstor</h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h4>Summary</h4>
+            Cloudstor is a data storage platform for .....
+            <h4>Links</h4>
+            <h4>Further Info</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sharepoint -->
+    <div
+      class="modal fade"
+      id="sharepointModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sharepoint</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Sharepoint is a dat storage platform for .....
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RedCap -->
+    <div
+      class="modal fade"
+      id="redcapModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">RedCap</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">RedCap is a survey platform for .....</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LimeSurvey -->
+    <div
+      class="modal fade"
+      id="limesurveyModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">LimeSurvey</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            LimeSurvey is a survey tool platform for .....
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LabArchives -->
+    <div
+      class="modal fade"
+      id="labarchivesModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">LabArchives</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Lab Archives is an electronic notebook platform for .....
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Qualtrics -->
+    <div
+      class="modal fade"
+      id="qualtricsModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Qualtrics</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Qualtrics is a survey platform for .....</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Australian Data Archive -->
+
+    <div
+      class="modal fade"
+      id="adaModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Australian Data Archive
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Australian Data Archive (ADA) is a data repository for .....
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research Data Repository -->
+
+    <div
+      class="modal fade"
+      id="rdrModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Research Data Repository
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            The Research Data Repository is a data repository for .....
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dryad -->
+
+    <div
+      class="modal fade"
+      id="dryadModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Dryad</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Dryad is a data repository for .....</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Zenodo -->
+
+    <div
+      class="modal fade"
+      id="zenodoModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Zenodo</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Zenodo is a data repository for .....</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infonetica (DMP) -->
+
+    <div
+      class="modal fade"
+      id="dmpModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">DMP Tool</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            The Infonetica DMP tool allows you to create a DMP .....
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Commercial Cloud -->
+
+    <div
+      class="modal fade"
+      id="awsModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Commercial Cloud Storage
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Commercial Cloud offerings are availble for storing your data .....
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ronin -->
+
+    <div
+      class="modal fade"
+      id="roninModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ronin</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Ronin is a tool for helping leverage cloud compute....
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="p-5 bg-dark text-light" id="contact">
+      <div class="container">
+        <h2>Further Information</h2>
+        <p class="lead">
+          For further information, please contact the eResearch team
+        </p>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="static/js/index.js"></script>
+  </body>
+</html>

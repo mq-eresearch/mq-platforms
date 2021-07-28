@@ -1,0 +1,52 @@
+/* Form */
+
+/* Style the form */
+#decisionsForm {
+  background-color: #ffffff;
+  margin: 5px auto;
+  padding: 5px;
+  width: 80%;
+  /* min-width: 300px; */
+}
+
+/* Style the input fields */
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Cards */
+.greyed-out-card {
+  background-color: rgba(248, 248, 248, 1);
+  opacity: 0.4;
+}
+
+#helpText {
+  color: #999999;
+}
+
+body::before {
+  display: block;
+  content: "";
+  height: 60px;
+}
+
+@media (min-width: 768px) {
+  .news-input {
+    width: 50%;
+  }
+}
+
+a.platformHeading {
+  text-align: center;
+  font-size: 28px;
+  text-decoration: none;
+}
