@@ -79,113 +79,115 @@
         <div class="row">
           <!-- FILTER COLUMN -->
           <div class="col-lg-3 p-4 pb-lg-0 mb-3 mb-lg-0 border">
-            <legend class="col-form-label pt-2">Data Lifecycle Stage</legend>
-            <div class="form-check form-switch">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="switchDataManagement"
-                value="data-management"
-                checked
-                onchange="updatePlatformCards()"
-              />
-              <label class="form-check-label" for="switchDataManagement"
-                >Include Data Management Tools</label
-              >
-            </div>
-            <div class="form-check form-switch">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="switchDataCapture"
-                value="data-capture"
-                checked
-                onchange="updatePlatformCards()"
-              />
-              <label class="form-check-label" for="switchDataCapture"
-                >Include Data Capture Tools</label
-              >
-            </div>
-            <div class="form-check form-switch">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="switchDataStorage"
-                value="data-storage"
-                checked
-                onchange="updatePlatformCards()"
-              />
-              <label class="form-check-label" for="switchDataStorage"
-                >Include Data Storage Tools</label
-              >
-            </div>
-            <div class="form-check form-switch">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="switchDataCompute"
-                value="data-compute"
-                checked
-                onchange="updatePlatformCards()"
-              />
-              <label class="form-check-label" for="switchDataCompute"
-                >Include Data Compute Tools</label
-              >
-            </div>
-            <div class="form-check form-switch">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="switchDataArchival"
-                value="data-archival"
-                checked
-                onchange="updatePlatformCards()"
-              />
-              <label class="form-check-label" for="switchDataArchival"
-                >Include Data Archival Tools</label
-              >
-            </div>
+            <div class="sticky-top">
+              <legend class="col-form-label pt-2">Data Lifecycle Stage</legend>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="switchDataManagement"
+                  value="data-management"
+                  checked
+                  onchange="updatePlatformCards()"
+                />
+                <label class="form-check-label" for="switchDataManagement"
+                  >Include Data Management Tools</label
+                >
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="switchDataCapture"
+                  value="data-capture"
+                  checked
+                  onchange="updatePlatformCards()"
+                />
+                <label class="form-check-label" for="switchDataCapture"
+                  >Include Data Capture Tools</label
+                >
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="switchDataStorage"
+                  value="data-storage"
+                  checked
+                  onchange="updatePlatformCards()"
+                />
+                <label class="form-check-label" for="switchDataStorage"
+                  >Include Data Storage Tools</label
+                >
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="switchDataCompute"
+                  value="data-compute"
+                  checked
+                  onchange="updatePlatformCards()"
+                />
+                <label class="form-check-label" for="switchDataCompute"
+                  >Include Data Compute Tools</label
+                >
+              </div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="switchDataArchival"
+                  value="data-archival"
+                  checked
+                  onchange="updatePlatformCards()"
+                />
+                <label class="form-check-label" for="switchDataArchival"
+                  >Include Data Archival Tools</label
+                >
+              </div>
 
-            <legend class="col-form-label pt-5">Data Sensitivity</legend>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="sensitivityForm"
-                id="radio-general"
-                value="general"
-                onchange="updatePlatformCards()"
-                checked
-              />
-              <label class="form-check-label" for="radio-general">
-                General
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="sensitivityForm"
-                id="radio-sensitive"
-                value="sensitive"
-                onchange="updatePlatformCards()"
-              />
-              <label class="form-check-label" for="radio-sensitive">
-                Sensitive
-              </label>
-            </div>
-            <div class="form-check disabled">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="sensitivityForm"
-                id="radio-highly-sensitive"
-                value="highly-sensitive"
-                onchange="updatePlatformCards()"
-              />
-              <label class="form-check-label" for="radio-highly-sensitive">
-                Highly Sensitive
-              </label>
+              <legend class="col-form-label pt-5">Data Sensitivity</legend>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sensitivityForm"
+                  id="radio-general"
+                  value="general"
+                  onchange="updatePlatformCards()"
+                  checked
+                />
+                <label class="form-check-label" for="radio-general">
+                  General
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sensitivityForm"
+                  id="radio-sensitive"
+                  value="sensitive"
+                  onchange="updatePlatformCards()"
+                />
+                <label class="form-check-label" for="radio-sensitive">
+                  Sensitive
+                </label>
+              </div>
+              <div class="form-check disabled">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sensitivityForm"
+                  id="radio-highly-sensitive"
+                  value="highly-sensitive"
+                  onchange="updatePlatformCards()"
+                />
+                <label class="form-check-label" for="radio-highly-sensitive">
+                  Highly Sensitive
+                </label>
+              </div>
             </div>
           </div>
 

@@ -2,6 +2,10 @@
   min-height: 750px;
 }
 
+.sticky-top {
+  top: 100px;
+}
+
 /* Form */
 
 /* Style the form */
