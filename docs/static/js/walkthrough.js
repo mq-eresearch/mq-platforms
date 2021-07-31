@@ -1,64 +1,3 @@
-const forms = [
-  {
-    form_id: 0,
-    question: "What do you want to do?",
-    help_text: "Tell us what you want to do",
-    answers: [
-      {
-        answer_id: "1",
-        answer_code: "capture-data",
-        answer_block: "capture-data",
-        answer_text: "Capture Data",
-        next_form_id: 1,
-      },
-      {
-        answer_id: "2",
-        answer_code: "store-data",
-        answer_text: "Store Data",
-        next_form_id: 1,
-      },
-      {
-        answer_id: "3",
-        answer_code: "analyse-data",
-        answer_text: "Analyse Data",
-        next_form_id: 1,
-      },
-      {
-        answer_id: "4",
-        answer_code: "archive-data",
-        answer_text: "Archive Data",
-        next_form_id: 1,
-      },
-    ],
-  },
-  {
-    form_id: 1,
-    question: "What is the sensitivity of your data?",
-    help_text:
-      "The choice of platforms available to you are dependent on the sensitivity of your data",
-    answers: [
-      {
-        answer_id: "1",
-        answer_code: "general",
-        answer_text: "General",
-        next_form_id: 2,
-      },
-      {
-        answer_id: "2",
-        answer_code: "sensitive",
-        answer_text: "Sensitive",
-        next_form_id: 2,
-      },
-      {
-        answer_id: "3",
-        answer_code: "highly-sensitive",
-        answer_text: "Highly Sensitive",
-        next_form_id: 2,
-      },
-    ],
-  },
-];
-
 function getFormDetails(formID) {
   for (var i = 0; i < forms.length; i++) {
     if (forms[i].form_id == formID) {
@@ -67,14 +6,11 @@ function getFormDetails(formID) {
   }
 }
 
-function activateNextButton(answer_code, nextFormID) {
+function activateNextButton(nextFormID) {
   // Grab next button element
   const nextBtn = document.getElementById("nextFormBtn");
   nextBtn.removeAttribute("disabled");
-  nextBtn.setAttribute(
-    "onclick",
-    "populateForm(" + answer_code + "," + nextFormID + ")"
-  );
+  nextBtn.setAttribute("onclick", "nextForm(" + nextFormID + ")");
 }
 
 function disableNextButton() {
@@ -86,6 +22,7 @@ function disableNextButton() {
 function setAnswers(answers) {
   var html = [];
   answers.forEach(function (answer) {
+    // myanswer = `onclick="activateNextButton(${answer["answer_code"]}, ${answer["next_form_id"]})"`;
     var answer_html = [
       '<div class="form-check mb-2">',
       '<input class="form-check-input" type="radio"',
@@ -105,7 +42,7 @@ function setAnswers(answers) {
   return html;
 }
 
-function nextForm() {
+function nextForm(formID) {
   populateForm(formID);
 }
 
@@ -128,4 +65,14 @@ function populateForm(formID) {
   formAnswers.innerHTML = answers;
 }
 
-populateForm(0);
+fetch("forms.json")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    forms = data;
+    populateForm(1);
+  })
+  .catch((err) => {
+    // Do something for an error here
+  });
