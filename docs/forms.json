@@ -1,6 +1,7 @@
 [
   {
-    "form_id": "1",
+    "page_id": "1",
+    "page_type": "form",
     "question": "What do you want to do?",
     "help_text": "Tell us what you want to do",
     "answers": [
@@ -8,37 +9,42 @@
         "answer_id": "1",
         "answer_code": "plan-data",
         "answer_text": "Plan my Data",
-        "next_form_id": "3",
-        "final-page": "1"
+        "next_page_id": "10",
+        "next_page_type": "result"
       },
       {
         "answer_id": "2",
         "answer_code": "capture-data",
         "answer_text": "Capture Data",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       },
       {
         "answer_id": "3",
         "answer_code": "store-data",
         "answer_text": "Store my Data",
-        "next_form_id": "3"
+        "next_page_id": "3",
+        "next_page_type": "form"
       },
       {
         "answer_id": "4",
         "answer_code": "analyse-data",
         "answer_text": "Analyse my Data",
-        "next_form_id": "9"
+        "next_page_id": "9",
+        "next_page_type": "form"
       },
       {
         "answer_id": "5",
         "answer_code": "archive-data",
         "answer_text": "Archive my Data",
-        "next_form_id": "4"
+        "next_page_id": "4",
+        "next_page_type": "form"
       }
     ]
   },
   {
-    "form_id": "2",
+    "page_id": "2",
+    "page_type": "form",
     "question": "What type of data are you capturing",
     "help_text": "Give us more information about the type of data you are intending to capture",
     "answers": [
@@ -46,24 +52,28 @@
         "answer_id": "1",
         "answer_code": "surveys",
         "answer_text": "Survey Information",
-        "next_form_id": "6"
+        "next_page_id": "6",
+        "next_page_type": "form"
       },
       {
         "answer_id": "2",
         "answer_code": "audio-video",
         "answer_text": "Audio and/or Video recordings",
-        "next_form_id": "7"
+        "next_page_id": "7",
+        "next_page_type": "form"
       },
       {
         "answer_id": "3",
         "answer_code": "eln",
         "answer_text": "Electronic Lab Notebooks",
-        "next_form_id": "3"
+        "next_page_id": "11",
+        "next_page_type": "result"
       }
     ]
   },
   {
-    "form_id": "3",
+    "page_id": "3",
+    "page_type": "form",
     "question": "What is the sensitivity of your data?",
     "help_text": "The choice of platforms available to you are dependent on the sensitivity of your data",
     "answers": [
@@ -71,24 +81,28 @@
         "answer_id": "1",
         "answer_code": "general",
         "answer_text": "General",
-        "next_form_id": "2"
+        "next_page_id": "12",
+        "next_page_type": "result"
       },
       {
         "answer_id": "2",
         "answer_code": "sensitive",
         "answer_text": "Sensitive",
-        "next_form_id": "2"
+        "next_page_id": "13",
+        "next_page_type": "result"
       },
       {
         "answer_id": "3",
         "answer_code": "highly-sensitive",
         "answer_text": "Highly Sensitive",
-        "next_form_id": "2"
+        "next_page_id": "14",
+        "next_page_type": "result"
       }
     ]
   },
   {
-    "form_id": "4",
+    "page_id": "4",
+    "page_type": "form",
     "question": "Does a domain-specific repository exist for your scientific domain?",
     "help_text": "Domain-specific repositories exist for a variety of scientific domains. Check re3data.org for more information",
     "answers": [
@@ -96,18 +110,21 @@
         "answer_id": "1",
         "answer_code": "ds-yes",
         "answer_text": "Yes",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       },
       {
         "answer_id": "2",
         "answer_code": "ds-no",
         "answer_text": "No",
-        "next_form_id": "5"
+        "next_page_id": "5",
+        "next_page_type": "form"
       }
     ]
   },
   {
-    "form_id": "5",
+    "page_id": "5",
+    "page_type": "form",
     "question": "Does your data relate to social, political and/or economic affairs?",
     "help_text": "Could your data be classified as social or economic?",
     "answers": [
@@ -115,18 +132,21 @@
         "answer_id": "1",
         "answer_code": "se-yes",
         "answer_text": "Yes",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       },
       {
         "answer_id": "2",
         "answer_code": "se-no",
         "answer_text": "No",
-        "next_form_id": "8"
+        "next_page_id": "8",
+        "next_page_type": "form"
       }
     ]
   },
   {
-    "form_id": "6",
+    "page_id": "6",
+    "page_type": "form",
     "question": "What is the sensitivity of your data?",
     "help_text": "The choice of platforms available to you are dependent on the sensitivity of your data",
     "answers": [
@@ -134,24 +154,28 @@
         "answer_id": "1",
         "answer_code": "general",
         "answer_text": "General",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       },
       {
         "answer_id": "2",
         "answer_code": "sensitive",
         "answer_text": "Sensitive",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       },
       {
         "answer_id": "3",
         "answer_code": "highly-sensitive",
         "answer_text": "Highly Sensitive",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       }
     ]
   },
   {
-    "form_id": "7",
+    "page_id": "7",
+    "page_type": "form",
     "question": "What is the sensitivity of your data?",
     "help_text": "The choice of platforms available to you are dependent on the sensitivity of your data",
     "answers": [
@@ -159,24 +183,28 @@
         "answer_id": "1",
         "answer_code": "general",
         "answer_text": "General",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       },
       {
         "answer_id": "2",
         "answer_code": "sensitive",
         "answer_text": "Sensitive",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       },
       {
         "answer_id": "3",
         "answer_code": "highly-sensitive",
         "answer_text": "Highly Sensitive",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       }
     ]
   },
   {
-    "form_id": "8",
+    "page_id": "8",
+    "page_type": "form",
     "question": "What is the sensitivity of your data?",
     "help_text": "The choice of platforms available to you are dependent on the sensitivity of your data",
     "answers": [
@@ -184,24 +212,28 @@
         "answer_id": "1",
         "answer_code": "general",
         "answer_text": "General",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       },
       {
         "answer_id": "2",
         "answer_code": "sensitive",
         "answer_text": "Sensitive",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       },
       {
         "answer_id": "3",
         "answer_code": "highly-sensitive",
         "answer_text": "Highly Sensitive",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       }
     ]
   },
   {
-    "form_id": "9",
+    "page_id": "9",
+    "page_type": "form",
     "question": "What analysis requirements do you have?",
     "help_text": "Do you need access to compute or software?",
     "answers": [
@@ -209,14 +241,41 @@
         "answer_id": "1",
         "answer_code": "compute-resources",
         "answer_text": "Compute Resources",
-        "next_form_id": "2"
+        "next_page_id": "2",
+        "next_page_type": "form"
       },
       {
         "answer_id": "2",
         "answer_code": "software",
         "answer_text": "Software",
-        "next_form_id": "2"
+        "next_page_id": "10",
+        "next_page_type": "result"
       }
     ]
+  },
+  {
+    "page_id": "10",
+    "page_type": "results",
+    "results": ["infonetica"]
+  },
+  {
+    "page_id": "11",
+    "page_type": "results",
+    "results": ["labarchives"]
+  },
+  {
+    "page_id": "12",
+    "page_type": "results",
+    "results": ["cloudstor", "sharepooint", "aws"]
+  },
+  {
+    "page_id": "13",
+    "page_type": "results",
+    "results": ["cloudstor", "sharepooint", "aws"]
+  },
+  {
+    "page_id": "14",
+    "page_type": "results",
+    "results": ["sharepooint", "aws"]
   }
 ]

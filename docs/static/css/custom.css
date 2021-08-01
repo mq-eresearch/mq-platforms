@@ -1,5 +1,9 @@
-#main-body {
-  min-height: 750px;
+#form-body {
+  min-height: 450px;
+}
+
+#result-body {
+  min-height: 450px;
 }
 
 .sticky-top {
