@@ -129,10 +129,8 @@ function populateResult(page) {
   // // Populate form html
   // formQuestion.innerText = currentPage["question"];
   // helpText.innerText = currentPage["help_text"];
-  console.log(currentPage);
-  console.log(resultsSection);
+
   results = setResults(currentPage["results"]);
-  console.log(results);
   resultsSection.innerHTML = results;
 
   // Finally, show the results section
