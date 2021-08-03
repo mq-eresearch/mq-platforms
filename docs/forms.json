@@ -44,6 +44,7 @@
   },
   {
     "page_id": "2",
+    "previous_page_id": "1",
     "page_type": "form",
     "question": "What type of data are you capturing",
     "help_text": "Give us more information about the type of data you are intending to capture",
@@ -73,6 +74,7 @@
   },
   {
     "page_id": "3",
+    "previous_page_id": "1",
     "page_type": "form",
     "question": "What is the sensitivity of your data?",
     "help_text": "The choice of platforms available to you are dependent on the sensitivity of your data",
@@ -102,6 +104,7 @@
   },
   {
     "page_id": "4",
+    "previous_page_id": "1",
     "page_type": "form",
     "question": "Does a domain-specific repository exist for your scientific domain?",
     "help_text": "Domain-specific repositories exist for a variety of scientific domains. Check re3data.org for more information",
@@ -124,6 +127,7 @@
   },
   {
     "page_id": "5",
+    "previous_page_id": "4",
     "page_type": "form",
     "question": "Does your data relate to social, political and/or economic affairs?",
     "help_text": "Could your data be classified as social or economic?",
@@ -146,6 +150,7 @@
   },
   {
     "page_id": "6",
+    "previous_page_id": "2",
     "page_type": "form",
     "question": "What is the sensitivity of your data?",
     "help_text": "The choice of platforms available to you are dependent on the sensitivity of your data",
@@ -175,6 +180,7 @@
   },
   {
     "page_id": "7",
+    "previous_page_id": "2",
     "page_type": "form",
     "question": "What is the sensitivity of your data?",
     "help_text": "The choice of platforms available to you are dependent on the sensitivity of your data",
@@ -204,6 +210,7 @@
   },
   {
     "page_id": "8",
+    "previous_page_id": "5",
     "page_type": "form",
     "question": "What is the sensitivity of your data?",
     "help_text": "The choice of platforms available to you are dependent on the sensitivity of your data",
@@ -233,6 +240,7 @@
   },
   {
     "page_id": "9",
+    "previous_page_id": "1",
     "page_type": "form",
     "question": "What analysis requirements do you have?",
     "help_text": "Do you need access to compute or software?",
@@ -255,26 +263,31 @@
   },
   {
     "page_id": "10",
+    "previous_page_id": "1",
     "page_type": "results",
     "results": ["infonetica"]
   },
   {
     "page_id": "11",
+    "previous_page_id": "2",
     "page_type": "results",
     "results": ["labarchives"]
   },
   {
     "page_id": "12",
+    "previous_page_id": "3",
     "page_type": "results",
     "results": ["cloudstor", "sharepooint", "aws"]
   },
   {
     "page_id": "13",
+    "previous_page_id": "3",
     "page_type": "results",
     "results": ["cloudstor", "sharepooint", "aws"]
   },
   {
     "page_id": "14",
+    "previous_page_id": "3",
     "page_type": "results",
     "results": ["sharepooint", "aws"]
   }

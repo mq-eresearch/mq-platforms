@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="static/css/custom.css" />
     <title>MQ Research Platforms</title>
   </head>
-  <body>
+  <ec>
     <!-- NAVBAR -->
     <nav class="navbar navbar-light navbar-expand-lg bg-light py-3 fixed-top">
       <div class="container full-width">
@@ -179,18 +179,12 @@
       </div>
     </section>
 
-    <section class="pb-3">
+    <section class="pb-5">
       <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-4 offset-md-8">
-            <button
-              type="button"
-              id="nextFormBtn"
-              class="btn btn-lg btn-block btn-success"
-            >
-              Next >>>
-            </button>
-          </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-end">
+          <button class="btn btn-lg btn-secondary me-md-2 d-none" id="backBtn" type="button"><i class="bi-arrow-left-circle"></i> Back</button>
+          <button class="btn btn-lg btn-info" id="nextFormBtn" type="button">Next <i class="bi-arrow-right-circle"></i></button>
+          <a class="btn btn-lg btn-secondary" href="/docs/walkthrough.html" role="button" id="resetBtn">Reset <i class="bi-arrow-repeat"></i></a>
         </div>
       </div>
     </section>

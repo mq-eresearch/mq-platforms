@@ -10,6 +10,11 @@
   top: 100px;
 }
 
+.modal-body {
+  height: 60vh;
+  overflow-y: auto;
+}
+
 /* Form */
 
 /* Style the form */
